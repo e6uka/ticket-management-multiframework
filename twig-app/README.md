@@ -28,6 +28,24 @@ php -S localhost:8000 -t public
 # Or use Apache/Nginx with document root set to public/
 ```
 
+## Static export (build to /dist)
+
+If you want to produce a purely static version of the Twig site (HTML + assets) suitable for hosting on GitHub Pages or any static host, there's a helper script that renders the Twig templates and copies the public assets into `dist/`.
+
+Run:
+
+```bash
+cd twig-app
+composer install    # make sure vendor/ is available
+php scripts/build_static.php
+
+# Result: twig-app/dist/ contains index.html, login/index.html, signup/index.html, dashboard/index.html, tickets/index.html and assets/
+```
+
+Notes:
+- The static build renders templates with no server session (pages will include client-side JS that expects localStorage for auth). The dashboard page includes a client-side redirect to `/login` if not authenticated.
+- This static export is useful for demo or documentation hosting. If your app requires server-side behavior (PHP sessions, server validation, dynamic forms), host it on a PHP-capable platform (Render, Fly.io, Railway, etc.).
+
 ## Project Structure
 
 ```
