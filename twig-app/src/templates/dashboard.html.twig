@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<link rel="stylesheet" href="/assets/css/Dashboard.css">
+<div class="dashboard-page">
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <h2 class="navbar-brand">Ticket Management</h2>
+    </div>
+  </nav>
+
+  <div class="container dashboard-content">
+    <h1>Dashboard</h1>
+    
+    <div class="stats-grid">
+      <div class="stat-card card">
+        <div class="stat-icon" style="background-color: #E0E7FF;">📊</div>
+        <div class="stat-info">
+          <h3>{{ stats.total|default(0) }}</h3>
+          <p>Total Tickets</p>
+        </div>
+      </div>
+
+      <div class="stat-card card">
+        <div class="stat-icon" style="background-color: #D1FAE5;">✓</div>
+        <div class="stat-info">
+          <h3>{{ stats.open|default(0) }}</h3>
+          <p>Open Tickets</p>
+        </div>
+      </div>
+
+      <div class="stat-card card">
+        <div class="stat-icon" style="background-color: #FEF3C7;">⏳</div>
+        <div class="stat-info">
+          <h3>{{ stats.inProgress|default(0) }}</h3>
+          <p>In Progress</p>
+        </div>
+      </div>
+
+      <div class="stat-card card">
+        <div class="stat-icon" style="background-color: #F3F4F6;">✔</div>
+        <div class="stat-info">
+          <h3>{{ stats.closed|default(0) }}</h3>
+          <p>Resolved Tickets</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-actions">
+      <a href="/tickets" class="btn btn-primary">Manage Tickets</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'footer.html.twig' %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  if (!localStorage.getItem('ticketapp_session')) {
+    window.location.href = '/auth/login';
+  }
+</script>
+{% endblock %}

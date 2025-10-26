@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Management System</title>
+    <link href="/assets/css/global.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        {% if flash %}
+            <div class="alert alert-{{ flash.type }} alert-dismissible fade show" role="alert">
+                {{ flash.message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="logout-button-container"></div>
+
+    {% block footer %}{% endblock %}
+
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (auth.isAuthenticated()) {
+                const logoutButton = document.createElement('button');
+                logoutButton.textContent = 'Logout';
+                logoutButton.classList.add('btn', 'btn-danger');
+                logoutButton.addEventListener('click', () => {
+                    auth.logout();
+                });
+                document.getElementById('logout-button-container').appendChild(logoutButton);
+            }
+        });
+    </script>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
