@@ -270,6 +270,10 @@ Each implementation includes its own detailed README:
 - [Vue.js Implementation](./vue-app/README.md) - 🚧 In Progress
 - [Twig Implementation](./twig-app/README.md) - 📋 Planned
 
+Notes:
+- Routes for authentication pages are available at `/login` and `/signup` (previously `/auth/login` and `/auth/signup`).
+- The Twig implementation now includes a site-wide footer and the logout button placement/style has been unified with the React and Vue implementations.
+
 ## 🤝 Contributing
 
 This is a demonstration project showcasing multi-framework development. The React implementation serves as the reference for Vue and Twig ports.

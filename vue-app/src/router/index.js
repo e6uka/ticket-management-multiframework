@@ -8,12 +8,12 @@ const routes = [
     component: () => import('../views/Landing.vue')
   },
   {
-    path: '/auth/login',
+    path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/auth/signup',
+    path: '/signup',
     name: 'Signup',
     component: () => import('../views/Signup.vue')
   },
@@ -24,8 +24,8 @@ const routes = [
     beforeEnter: (to, from, next) => {
       if (auth.isAuthenticated()) {
         next();
-      } else {
-        next('/auth/login');
+        } else {
+        next('/login');
       }
     }
   },
@@ -36,8 +36,8 @@ const routes = [
     beforeEnter: (to, from, next) => {
       if (auth.isAuthenticated()) {
         next();
-      } else {
-        next('/auth/login');
+        } else {
+        next('/login');
       }
     }
   },

@@ -14,8 +14,8 @@ import Footer from '../components/Footer.vue';
           Manage, prioritize, and resolve tickets efficiently.
         </p>
         <div class="hero-actions">
-          <RouterLink to="/auth/login" class="btn btn-primary">Login</RouterLink>
-          <RouterLink to="/auth/signup" class="btn btn-secondary">Get Started</RouterLink>
+          <RouterLink to="/login" class="btn btn-primary">Login</RouterLink>
+          <RouterLink to="/signup" class="btn btn-secondary">Get Started</RouterLink>
         </div>
       </div>
       <svg class="wave" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">

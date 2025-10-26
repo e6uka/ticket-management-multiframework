@@ -92,7 +92,7 @@ export default function Signup() {
         </form>
 
         <p className="auth-link">
-          Already have an account? <Link to="/auth/login">Login</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
 

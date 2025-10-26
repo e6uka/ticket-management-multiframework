@@ -55,7 +55,7 @@ import { auth } from '../utils/auth'
 
 const routes = [
   { path: '/', component: () => import('../views/Landing.vue') },
-  { path: '/auth/login', component: () => import('../views/Login.vue') },
+  { path: '/login', component: () => import('../views/Login.vue') },
   // ... protected routes with beforeEnter guards
 ]
 ```
@@ -106,6 +106,10 @@ Password: password123
 - [ ] Toast notifications
 - [ ] Confirmation dialogs
 - [ ] Responsive design
+
+Notes:
+- The application uses `/login` and `/signup` routes for authentication pages.
+- The logout button placement and footer styling are aligned with the React implementation for visual consistency.
 
 ## References
 

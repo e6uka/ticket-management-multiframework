@@ -14,8 +14,8 @@ export default function Landing() {
             Manage, prioritize, and resolve tickets efficiently.
           </p>
           <div className="hero-actions">
-            <Link to="/auth/login" className="btn btn-primary">Login</Link>
-            <Link to="/auth/signup" className="btn btn-secondary">Get Started</Link>
+            <Link to="/login" className="btn btn-primary">Login</Link>
+            <Link to="/signup" className="btn btn-secondary">Get Started</Link>
           </div>
         </div>
         <svg className="wave" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">

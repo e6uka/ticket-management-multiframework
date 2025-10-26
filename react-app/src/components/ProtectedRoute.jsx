@@ -3,7 +3,7 @@ import { auth } from '../utils/auth';
 
 export default function ProtectedRoute({ children }) {
   if (!auth.isAuthenticated()) {
-    return <Navigate to="/auth/login" replace />;
+    return <Navigate to="/login" replace />;
   }
   return children;
 }

@@ -18,21 +18,24 @@
         {% block content %}{% endblock %}
     </div>
 
-    <div id="logout-button-container"></div>
+    {# logout button is placed inside page navbars where needed to match other apps #}
 
-    {% block footer %}{% endblock %}
+    {% block footer %}
+        {% include 'footer.html.twig' %}
+    {% endblock %}
 
     <script src="/assets/js/auth.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (auth.isAuthenticated()) {
-                const logoutButton = document.createElement('button');
-                logoutButton.textContent = 'Logout';
-                logoutButton.classList.add('btn', 'btn-danger');
-                logoutButton.addEventListener('click', () => {
-                    auth.logout();
-                });
-                document.getElementById('logout-button-container').appendChild(logoutButton);
+                const logoutBtn = document.getElementById('logout-button');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', () => auth.logout());
+                }
+            } else {
+                // hide the dashboard's logout button if present
+                const logoutBtn = document.getElementById('logout-button');
+                if (logoutBtn) logoutBtn.style.display = 'none';
             }
         });
     </script>

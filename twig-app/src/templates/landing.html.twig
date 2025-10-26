@@ -14,8 +14,8 @@
       </p>
       <div class="hero-actions">
         {% if not session.user %}
-          <a href="/auth/login" class="btn btn-primary">Login</a>
-          <a href="/auth/signup" class="btn btn-secondary">Get Started</a>
+          <a href="/login" class="btn btn-primary">Login</a>
+          <a href="/signup" class="btn btn-secondary">Get Started</a>
         {% else %}
           <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
         {% endif %}

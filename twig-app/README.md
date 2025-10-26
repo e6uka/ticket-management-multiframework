@@ -87,7 +87,7 @@ $twig = new Environment($loader);
 
 // Routes
 $app->get('/', 'LandingController:index');
-$app->get('/auth/login', 'AuthController:showLogin');
+$app->get('/login', 'AuthController:showLogin');
 // ... more routes
 
 $app->run();
@@ -123,8 +123,8 @@ $app->run();
             <h1>Ticket Management System</h1>
             <p class="hero-description">...</p>
             <div class="hero-actions">
-                <a href="/auth/login" class="btn btn-primary">Login</a>
-                <a href="/auth/signup" class="btn btn-secondary">Get Started</a>
+                <a href="/login" class="btn btn-primary">Login</a>
+                    <a href="/signup" class="btn btn-secondary">Get Started</a>
             </div>
         </div>
         <svg class="wave">...</svg>
@@ -205,6 +205,11 @@ Password: password123
 - [ ] Server-side validation
 - [ ] Flash messages (like toasts)
 - [x] Responsive design
+
+Notes:
+- Authentication routes are available at `/login` and `/signup` (replaced former `/auth/*` routes).
+- The Twig implementation now includes a global footer and the logout button is placed in the navbar to match React and Vue apps (same styling: `btn btn-secondary`).
+- Dashboard stat cards use a horizontal layout with responsive wrapping to match other implementations.
 
 ## Key Differences from React/Vue
 

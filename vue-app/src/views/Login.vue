@@ -72,7 +72,7 @@ const handleSubmit = async (e) => {
       </form>
 
       <p class="auth-link">
-        Don't have an account? <RouterLink to="/auth/signup">Sign up</RouterLink>
+        Don't have an account? <RouterLink to="/signup">Sign up</RouterLink>
       </p>
 
       <!-- <div class="demo-credentials">

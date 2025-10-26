@@ -93,7 +93,7 @@ const auth = {
 
   logout: () => {
     localStorage.removeItem(SESSION_KEY);
-    window.location.href = '/auth/login';
+    window.location.href = '/login';
   },
 
   isAuthenticated: () => {
